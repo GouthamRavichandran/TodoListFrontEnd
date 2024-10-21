@@ -1,0 +1,48 @@
+body {
+  background-color: #e6f7ff !important;
+}
+
+.card {
+  width: 400px;
+  border: none;
+  margin: auto; /* Center the card */
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+    margin: 10px;
+  }
+}
+
+.btn-dark {
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.btn-dark:hover {
+  background-color: #0b5ed7;
+}
+
+.form {
+  padding: 10px;
+}
+
+.form input {
+  margin-bottom: 12px;
+  border-radius: 3px;
+}
+
+.form input::placeholder {
+  color: #aaa;
+}
+
+.form button {
+  margin-top: 20px;
+}
+
+.alert {
+  margin-bottom: 20px; /* Space between alert and form elements */
+}

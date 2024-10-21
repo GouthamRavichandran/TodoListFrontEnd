@@ -1,0 +1,23 @@
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  margin-left: 10px;
+}
+
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,0 +1,11 @@
+<div class="d-flex justify-content-center align-items-center mt-5">
+  <div class="card">
+    <form #loginForm="ngForm" class="form px-4 pt-5">
+      <h4 class="text-center">Please Login Below</h4>
+      <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+      <input type="text" class="form-control mb-3" placeholder="Username" [(ngModel)]="username" name="username" required minlength="3">
+      <input type="password" class="form-control mb-3" placeholder="Password" [(ngModel)]="password" name="password" required minlength="3">
+      <button type="button" class="btn btn-dark btn-block" (click)="login()" [disabled]="!loginForm.form.valid">Login</button>
+    </form>
+  </div>
+</div>

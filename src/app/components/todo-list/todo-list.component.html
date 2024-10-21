@@ -1,0 +1,29 @@
+<div class="container mt-5">
+  <h2 class="text-center">TO DO List</h2>
+
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Add a new TODO"
+      [(ngModel)]="newTodoDescription"
+      aria-label="New TODO"
+      required
+    />
+    <button class="btn btn-primary" (click)="addTodo()">Add New Task</button>
+  </div>
+
+  <ul class="list-group">
+    <li *ngFor="let todo of todos" class="list-group-item d-flex justify-content-between align-items-center">
+      <div>
+        <input
+          type="checkbox"
+          [(ngModel)]="todo.status"
+          (change)="updateTodoStatus(todo)"
+        />
+        <span [class.completed]="todo.status">{{ todo.description }}</span>
+      </div>
+      <button class="btn btn-danger btn-sm" (click)="deleteTodo(todo.id)">Delete</button>
+    </li>
+  </ul>
+</div>
