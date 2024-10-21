@@ -45,13 +45,26 @@ export class TodoListComponent implements OnInit {
   }
 
   updateTodoStatus(todo: any): void {
-    this.todoService.updateTodo(todo.id, { status: !todo.status, active: true }).subscribe(updatedTodo => {
+    this.todoService.updateTodo(todo.id, { status: !todo.status }).subscribe(updatedTodo => {
       const index = this.todos.findIndex(t => t.id === updatedTodo.id);
       if (index !== -1) {
         this.todos[index] = updatedTodo;
       }
     });
   }
+
+  editTodo(todo: any): void {
+    const newDescription = prompt("Edit your todo:", todo.description);
+    if (newDescription) {
+      this.todoService.editTodo(todo.id, { ...todo, description: newDescription, status: false }).subscribe(updatedTodo => {
+        const index = this.todos.findIndex(t => t.id === updatedTodo.id);
+        if (index !== -1) {
+          this.todos[index] = updatedTodo;
+        }
+      });
+    }
+  }
+
 
   deleteTodo(todoId: number): void {
     this.todoService.deleteTodo(todoId).subscribe(() => {

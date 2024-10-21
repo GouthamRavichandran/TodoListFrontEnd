@@ -23,6 +23,7 @@
         />
         <span [class.completed]="todo.status">{{ todo.description }}</span>
       </div>
+      <button (click)="editTodo(todo)">Edit</button>
       <button class="btn btn-danger btn-sm" (click)="deleteTodo(todo.id)">Delete</button>
     </li>
   </ul>

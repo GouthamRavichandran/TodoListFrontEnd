@@ -21,9 +21,14 @@ export class TodoService {
   }
 
   // Update an existing todo status
-  updateTodo(todoId: number, todo: { status: boolean; active: boolean }): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}/${todoId}/status`, todo);
+  updateTodo(todoId: number, todo: { status: boolean}): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/status/${todoId}`, todo);
   }
+
+  // Edit todo
+  editTodo(todoId: number, editedTodo: { description: string; status: boolean }): Observable<any> {
+      return this.http.put<any>(`${this.apiUrl}/edit/${todoId}`, editedTodo);
+    }
 
   // Delete todo
   deleteTodo(todoId: number): Observable<void> {

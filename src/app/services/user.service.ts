@@ -29,7 +29,6 @@ export class UserService {
   }
 
   isAuthenticated(): boolean {
-    console.log(this.userId);
     return this.userId !== null; // Check if user is logged in
   }
 }
